@@ -3,18 +3,18 @@ import csv
 import ast
 
 
-def convert_json_to_csv():
+def convert_json_to_csv(input_file, output_file):
     # Read the JSON file
     # with open("output.json", "r", encoding="utf-8") as json_file:
     # with open("eudic_cards_output.json", "r", encoding="utf-8") as json_file:
-    with open("eudic2.json", "r", encoding="utf-8") as json_file:
+    with open(input_file, "r", encoding="utf-8") as json_file:
         data = json.load(json_file)
 
     # Parse the JSON string to get the actual data
-    word_data = data["key0"]
+    word_data = data["output"]
 
     # Define CSV output file
-    csv_file = "output2.csv"
+    csv_file = output_file
 
     # Write to CSV
     with open(csv_file, "w", newline="", encoding="utf-8") as csvfile:
@@ -24,7 +24,7 @@ def convert_json_to_csv():
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         # Write header
-        writer.writeheader()
+        # writer.writeheader()
 
         # Write each row
         for item in word_data:
@@ -35,4 +35,7 @@ def convert_json_to_csv():
 
 
 if __name__ == "__main__":
-    convert_json_to_csv()
+    convert_json_to_csv("eudic1.json", "output1.csv")
+    convert_json_to_csv("eudic2.json", "output2.csv")
+    convert_json_to_csv("eudic3.json", "output3.csv")
+    # convert_json_to_csv("eudic4.json","output4.csv")
