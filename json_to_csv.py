@@ -36,6 +36,4 @@ def convert_json_to_csv(input_file, output_file):
 
 if __name__ == "__main__":
     convert_json_to_csv("eudic1.json", "output1.csv")
-    convert_json_to_csv("eudic2.json", "output2.csv")
-    convert_json_to_csv("eudic3.json", "output3.csv")
-    # convert_json_to_csv("eudic4.json","output4.csv")
+
